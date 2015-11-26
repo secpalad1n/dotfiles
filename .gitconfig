@@ -1,0 +1,16 @@
+[alias]
+	st = status -sb
+	co = checkout
+	br = branch
+	df = diff
+	lg = log -p
+	this = !git init && git add . && git commit -m \"Initial commit to repo\"
+	master = checkout master
+	undo = reset --soft HEAD@{1}
+	ignore=!([ ! -e .gitignore ] && touch .gitignore) | echo $1 >> .gitignore
+[push]
+	default = tracking
+[pull]
+	default= current
+[core]
+	editor = subl3 -w
