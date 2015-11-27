@@ -7,7 +7,7 @@
 	this = !git init && git add . && git commit -m \"Initial commit to repo\"
 	master = checkout master
 	undo = reset --soft HEAD@{1}
-	ignore=!([ ! -e .gitignore ] && touch .gitignore) | echo $1 >> .gitignore
+	ignore=!sh -c 'echo "$1" >> .gitignore' -
 [push]
 	default = tracking
 [pull]
