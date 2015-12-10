@@ -46,27 +46,28 @@ fi
 export EDITOR
 
 ## STARTUP FUNCTION TO GREET USER
-function NAME_GRAPHIC {
+function welcome_msg {
 	local RED='\033[0;31m'
-	local L_PURPLE='\033[1;35m'
-	local L_GREEN='\033[1;32m'
-	local L_CYAN='\033[0;36m'
-	local GRAY='\033[1;30m'
-	local END_COLOR='\033[0m'
-  local X_NAME="仙剑奇侠传"
+  local PURPLE='\033[1;35m'
+  local CYAN='\033[0;36m'
+  local GRAY='\033[1;30m'
+  local END_COLOR='\033[0m'
+
+  local X_NAME="仙剑奇侠传" #supposedly paladin in some form of Chinese characters
   local NAME="palad1n"
 
   if [ "${IS_X_RUNNING}" == true ]; then
-    printf "${GRAY}Welcome home,${END_COLOR} ${RED}${NAME}${END_COLOR}\n"
-    printf "${L_CYAN}\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ ${END_COLOR}\n"
-    printf "${L_PURPLE}                                                            \n"
+    printf "\n"
+    printf "${CYAN}\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ ${END_COLOR}\n"
+    printf "${GRAY}Welcome home,${END_COLOR}\n"
+    printf "${PURPLE}                                                            \n"
     printf "                |             | _ |         \n"
     printf "  __ \    _\` |  |   _\` |   _\` |   |  __ \   \n"
     printf "  |   |  (   |  |  (   |  (   |   |  |   |  \n"
     printf "  .__/  \__,_| _| \__,_| \__,_|  _| _|  _|  \n"
     printf " _|                                         \n"
-    printf "${END_COLOR}                                    \n"
-    printf "${L_CYAN}\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ ${END_COLOR}\n"
+    printf "${END_COLOR}                                      ${RED}${X_NAME}${END_COLOR}\n"
+    printf "${CYAN}\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ ${END_COLOR}\n"
     printf "\n"
   else
     printf "${GRAY}Welcome home,${END_COLOR} ${RED}${NAME}${END_COLOR}"
@@ -160,4 +161,4 @@ eval "$(rbenv init -)"
 
 eval "$(pyenv init -)"
 
-NAME_GRAPHIC
+welcome_msg
