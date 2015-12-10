@@ -11,6 +11,6 @@
 [push]
 	default = tracking
 [pull]
-	default= current
+	default = current
 [core]
 	editor = subl3 -w
